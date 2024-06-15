@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        background: #fff;
+        top: 0;
+        left: 50%;
+        margin-left: -3px;
+        z-index: -1;
+    }
+    .flecha-derecha {
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid rgb(16 185 129);
+        right: -15px;
+    }
+
+    .flecha-izquierda {
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid rgb(16 185 129);
+        left: -15px;
+    }
+}
+
+.boton-copiar:before {
+    content: 'Copiado';
+    position: absolute;
+    top: -52px;
+    right: -20px;
+    background-color: white;
+    color: darkblue;
+    padding: 8px 10px;
+    border-radius: 20px;
+    display: none;
+}
+.boton-copiar:after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    color: darkblue;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.copiar.activo .boton-copiar:after,
+.copiar.activo .boton-copiar:before {
+    display: block;
+}
